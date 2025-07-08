@@ -1,0 +1,151 @@
+/* style.css - Custom styles for Jeel Kukadiya Portfolio */
+
+/* === Font and Base === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #f9fafb;
+    color: #22223b;
+}
+
+.dark body {
+    background-color: #181926;
+    color: #e0e0e0;
+}
+
+/* === Gradient Text === */
+.gradient-text {
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* === Card Styles === */
+.project-card {
+    background: #fff;
+    transition: transform 0.2s;
+}
+
+.dark .project-card {
+    background: #23243a;
+    color: #e0e0e0;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.08);
+}
+
+/* === Nav Link Underline === */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    transition: width 0.1s ease;
+}
+
+.nav-link:hover::after,
+.active-nav::after {
+    width: 100%;
+}
+
+/* === Section Backgrounds === */
+.bg-white {
+    background-color: #fff !important;
+}
+
+.dark .bg-white {
+    background-color: #23243a !important;
+}
+
+.bg-gray-50 {
+    background-color: #f9fafb !important;
+}
+
+.dark .bg-gray-50 {
+    background-color: #181926 !important;
+}
+
+/* === Text Colors === */
+.text-gray-600 {
+    color: #4b5563 !important;
+}
+
+.dark .text-gray-600 {
+    color: #b0b3c6 !important;
+}
+
+.text-gray-700 {
+    color: #374151 !important;
+}
+
+.dark .text-gray-700 {
+    color: #e0e0e0 !important;
+}
+
+.text-gray-800 {
+    color: #22223b !important;
+}
+
+.dark .text-gray-800 {
+    color: #e0e0e0 !important;
+}
+
+/* === Skill Bar === */
+.skill-bar {
+    height: 8px;
+    border-radius: 4px;
+    background-color: #e5e7eb;
+}
+
+.dark .skill-bar {
+    background-color: #23243a;
+}
+
+.skill-progress {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    transition: width 1s ease-in-out;
+}
+
+/* === Hero Section Background === */
+#hero {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+}
+
+.dark #hero {
+    background: linear-gradient(135deg, #23243a 0%, #181926 100%);
+}
+
+/* === Floating Animation === */
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* === Hide Main Page Scrollbar === */
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+

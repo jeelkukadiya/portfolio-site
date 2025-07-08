@@ -1,0 +1,469 @@
+<!-- index.html - Personal Portfolio for Jeel Kukadiya -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeel Kukadiya - Java Backend Developer</title>
+    <meta name="description" content="Portfolio of Jeel Kukadiya, Java Backend Developer specializing in ERP, robotics, and scalable solutions. Projects, skills, education, and contact info.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="usericon.ico">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav id="nav" class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 shadow-sm backdrop-blur-md">
+        <div class="max-w-8xl mx-auto flex items-center h-16 px-6">
+            <!-- Left: Brand -->
+                <div class="flex items-center">
+                    <span class="text-xl font-bold gradient-text">JEEL KUKADIYA</span>
+                </div>
+            <!-- Right: Nav links and theme toggle -->
+            <div class="hidden md:flex items-center space-x-6 ml-auto">
+                <a href="#about" id="nav-about" class="nav-link text-blue-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400 px-3 py-2 text-sm font-medium">About</a>
+                <a href="#education" id="nav-education" class="nav-link text-blue-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400 px-3 py-2 text-sm font-medium">Education</a>
+                <a href="#skills" id="nav-skills" class="nav-link text-blue-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400 px-3 py-2 text-sm font-medium">Skills</a>
+                <a href="#projects" id="nav-projects" class="nav-link text-blue-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400 px-3 py-2 text-sm font-medium">Projects</a>
+                <a href="#coding" id="nav-coding" class="nav-link text-blue-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400 px-3 py-2 text-sm font-medium">Achievements</a>
+                <a href="#contact" id="nav-contact" class="nav-link text-blue-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400 px-3 py-2 text-sm font-medium">Contact</a>
+                <button id="theme-toggle" type="button" title="Toggle dark/light theme" aria-label="Toggle dark/light theme" class="ml-6 w-8 h-8 flex items-center justify-center rounded-full bg-gradient-to-tr from-blue-200 via-yellow-100 to-purple-200 dark:from-gray-800 dark:via-gray-700 dark:to-gray-900 shadow hover:scale-110 transition-all duration-300 relative overflow-hidden">
+                    <span class="sr-only">Toggle dark/light theme</span>
+                    <span id="theme-toggle-sun" class="absolute inset-0 flex items-center justify-center transition-transform duration-500">
+                        <svg class="w-5 h-5 text-yellow-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2m11-11h-2M3 12H1m16.95 7.07-1.41-1.41M6.46 6.46 5.05 5.05m12.02 0-1.41 1.41M6.46 17.54l-1.41 1.41"/></svg>
+                    </span>
+                    <span id="theme-toggle-moon" class="absolute inset-0 flex items-center justify-center transition-transform duration-500 scale-0">
+                        <svg class="w-5 h-5 text-blue-700 dark:text-blue-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/></svg>
+                    </span>
+                    </button>
+                </div>
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center ml-auto">
+                <button id="menu-toggle" class="text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg text-sm p-2" title="Open menu" aria-label="Open menu">
+                    <svg id="menu-icon" class="h-6 w-6 transform transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg id="close-icon" class="h-6 w-6 transform transition-transform duration-200 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Mobile Popup Menu -->
+    <div id="mobile-menu" class="md:hidden fixed top-20 left-0 w-full z-50 mt-4 py-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md rounded-lg shadow-xl transition-all duration-300" style="opacity:0; pointer-events:none; height:0; overflow:hidden;">
+        <button class="block w-full text-left px-4 py-2 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200" data-section="hero">Home</button>
+        <button class="block w-full text-left px-4 py-2 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200" data-section="about">About</button>
+        <button class="block w-full text-left px-4 py-2 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200" data-section="education">Education</button>
+        <button class="block w-full text-left px-4 py-2 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200" data-section="skills">Skills</button>
+        <button class="block w-full text-left px-4 py-2 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200" data-section="projects">Projects</button>
+        <button class="block w-full text-left px-4 py-2 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200" data-section="coding">Achievements</button>
+        <button class="block w-full text-left px-4 py-2 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200" data-section="contact">Contact</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="pt-24 pb-16 md:pt-32 md:pb-24 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center justify-between">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Java Backend <span class="gradient-text">Developer</span></h1>
+                    <p class="text-lg md:text-xl text-gray-600 mb-8">I'm a passionate developer with hands-on experience in Java backend development, ERP systems, and robotics. I enjoy solving complex problems, building efficient systems, and collaborating on innovative tech solutions.</p>
+                    <div class="flex space-x-4">
+                        <a href="resume.pdf" download class="flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium hover:shadow-lg transition duration-300">
+                            <i class="fas fa-download mr-2"></i> Download Resume
+                        </a>
+                        <a href="https://github.com/jeelkukadiya" target="_blank" rel="noopener noreferrer" class="flex items-center px-6 py-3 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-100 transition duration-300">
+                            <i class="fab fa-github mr-2"></i> View GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full opacity-20 blur-xl"></div>
+                        <div class="relative w-full h-full flex items-center justify-center">
+                            <div class="p-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full shadow-xl">
+                                <img src="img/passportimage.jpg" alt="Jeel Kukadiya Passport" class="w-48 h-48 md:w-60 md:h-60 object-cover rounded-full shadow-xl bg-white dark:bg-gray-800" />
+                            </div>
+                            <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                                <span class="w-4 h-4 rounded-full bg-blue-400 shadow"></span>
+                                <span class="w-4 h-4 rounded-full bg-purple-400 shadow"></span>
+                                <span class="w-4 h-4 rounded-full bg-pink-400 shadow"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-16 text-center">
+                <p class="text-gray-500 mb-2">Scroll to explore</p>
+                <div class="animate-bounce">
+                    <svg class="w-6 h-6 mx-auto text-gray-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                        <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold gradient-text inline-block">About Me</h2>
+            </div>
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h3 class="text-2xl font-bold mb-4">Who am I?</h3>
+                    <p class="text-gray-600 mb-6">I am a graduate with a B.E. in Information Technology from GCET, specializing in backend development with Java. My experience spans ERP systems, robotics, and immersive simulators, with a passion for building efficient, scalable solutions that solve real-world problems.</p>
+                    <p class="text-gray-600 mb-6">I've worked with tools like Axelor Open Platform, Hibernate, and RESTEasy, and contributed to national-level robotics competitions and Unity-based simulators. I thrive on tackling complex challenges and collaborating on innovative tech projects.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Java</span>
+                        <span class="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">Hibernate</span>
+                        <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">Psql</span>
+                        <span class="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">JavaScript</span>
+                        <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Python</span>
+                    </div>
+                </div>
+                <div class="md:w-1/2 grid grid-cols-2 gap-4">
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-xl">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-laptop-code text-blue-600 text-xl"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Backend Development</h4>
+                        <p class="text-gray-600 text-sm">Building robust, scalable server-side applications with Java</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-xl">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-robot text-purple-600 text-xl"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Robotics</h4>
+                        <p class="text-gray-600 text-sm">Designing and programming autonomous robotic systems</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-xl">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-code text-green-600 text-xl"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">ERP Systems</h4>
+                        <p class="text-gray-600 text-sm">Developing modular enterprise resource planning solutions</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-xl max-w-xs w-full">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-brain text-yellow-600 text-xl"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Machine Learning</h4>
+                        <p class="text-gray-600 text-sm break-words whitespace-normal">Basic supervised/unsupervised learning</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold gradient-text inline-block">Education</h2>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-6 max-w-3xl mx-auto">
+                    <h3 class="text-xl font-semibold mb-2">B.E. in Information Technology</h3>
+                    <p class="text-gray-700 mb-1">2021 – 2025</p>
+                <p class="text-gray-600 mb-1">G H Patel College of Engineering & Technology</p>
+                    <p class="text-gray-600 mb-2">CGPA: 7.62</p>
+                <p class="text-gray-500 text-sm">Specialized in backend development, database systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-white">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4 gradient-text">Technical Skills</h2>
+            <p class="text-gray-600 dark:text-gray-300 mt-2 max-w-2xl mx-auto px-4 sm:px-0">My toolkit includes a diverse range of programming languages, frameworks, and tools that power my projects and solutions.</p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6">
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-xl overflow-hidden transition duration-300 max-w-xs w-full md:max-w-sm hover:scale-105 hover:shadow-2xl">
+                <div class="p-4 flex items-center">
+                    <i class="fas fa-code mr-2 text-blue-500"></i>
+                    <h3 class="text-xl font-semibold mr-2">Programming Languages</h3>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs">Python</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">C++</span>
+                        <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs">Java</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-xl overflow-hidden transition duration-300 max-w-xs w-full md:max-w-sm hover:scale-105 hover:shadow-2xl">
+                <div class="p-4 flex items-center">
+                    <i class="fas fa-microchip mr-2 text-green-500"></i>
+                    <h3 class="text-xl font-semibold mr-2">Technologies & DB</h3>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs">OpenCV</span>
+                        <span class="px-3 py-1 bg-pink-100 text-pink-800 rounded-full text-xs">Machine Learning</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-xl overflow-hidden transition duration-300 max-w-xs w-full md:max-w-sm hover:scale-105 hover:shadow-2xl">
+                <div class="p-4 flex items-center">
+                    <i class="fas fa-cubes mr-2 text-purple-500"></i>
+                    <h3 class="text-xl font-semibold mr-2">Frameworks</h3>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs">Axelor Open Platform</span>
+                        <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs">Hibernate</span>
+                        <span class="px-3 py-1 bg-pink-100 text-pink-800 rounded-full text-xs">RESTEasy</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-xl overflow-hidden transition duration-300 max-w-xs w-full md:max-w-sm hover:scale-105 hover:shadow-2xl">
+                <div class="p-4 flex items-center">
+                    <i class="fas fa-tools mr-2 text-yellow-500"></i>
+                    <h3 class="text-xl font-semibold mr-2">Tools</h3>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs">Eclipse</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs">Gradle</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs">Git</span>
+                        <span class="px-3 py-1 bg-pink-100 text-pink-800 rounded-full text-xs">Firebase</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs">Unity</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Unity Game Engine</span>
+                        <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs">PyCharm</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-xl overflow-hidden transition duration-300 max-w-xs w-full md:max-w-sm hover:scale-105 hover:shadow-2xl">
+                <div class="p-4 flex items-center">
+                    <i class="fas fa-users mr-2 text-pink-500"></i>
+                    <h3 class="text-xl font-semibold mr-2">Soft Skills</h3>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Leadership</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs">Team Collaboration</span>
+                        <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs">Problem Solving</span>
+                        <span class="px-3 py-1 bg-pink-100 text-pink-800 rounded-full text-xs">Communication</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold gradient-text inline-block">Featured Projects</h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Explore my recent work, highlighting my expertise in backend development, robotics, and simulation.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Project 1: Task based Autonomous Robot (DD-Robocon 2024) -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-xl overflow-hidden transition duration-300">
+                    <img src="img/rbc.jpg" alt="Task based Autonomous Robot" class="w-full h-32 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold mb-1">Task based Autonomous Robot</h3>
+                        <p class="text-gray-600 text-sm mb-2">Autonomous robot for DD-Robocon 2024 using Python and Computer Vision.</p>
+                        <div class="flex flex-wrap gap-2 mb-2">
+                            <span class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs">Python</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">Computer Vision</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2: Axelor AOP ERP System -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-xl overflow-hidden transition duration-300">
+                    <img src="img/axelor.png" alt="Axelor AOP ERP System" class="w-full h-32 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold mb-1">Axelor AOP ERP System (<a href="https://github.com/jeelkukadiya/Internship-Task-Axelor/tree/main/axelor-aop" class="text-blue-600 hover:underline">GitHub</a>)</h3>
+                        <p class="text-gray-600 text-sm mb-2">Modular ERP with Java backend and Axelor meta-model.</p>
+                        <div class="flex flex-wrap gap-2 mb-2">
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Java</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-800 rounded-full text-xs">Axelor</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3: Paritrana – Counter Hijacking Training Simulator -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-xl overflow-hidden transition duration-300">
+                    <img src="img/paritrana.png" alt="Paritrana – Counter Hijacking Training Simulator" class="w-full h-32 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold mb-1">Paritrana – Training Simulator</h3>
+                        <p class="text-gray-600 text-sm mb-2">Unity-based simulator for counter-hijacking training.</p>
+                        <div class="flex flex-wrap gap-2 mb-2">
+                            <span class="px-2 py-1 bg-pink-100 text-pink-800 rounded-full text-xs">Unity</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Blender</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 4: Spotify Web Player Clone -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-xl overflow-hidden transition duration-300">
+                    <img src="img/spotify.png" alt="Spotify Web Player Clone" class="w-full h-32 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold mb-1">
+                            <a href="https://spotifymaster.netlify.app/" target="_blank" rel="noopener noreferrer" class="hover:underline text-green-600">Spotify Web Player Clone</a>
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-2">A minimal Spotify-inspired music player built with JavaScript and Tailwind CSS.</p>
+                        <div class="flex flex-wrap gap-2 mb-2">
+                            <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">JavaScript</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Tailwind</span>
+                            <span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs">Music</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coding Profiles Section -->
+    <section id="coding" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold gradient-text inline-block">Achievements</h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">A snapshot of my accomplishments, awards, and recognitions in engineering, coding, and innovation.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Robofest -->
+                <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 flex items-center">
+                    <div class="flex-shrink-0 w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-route text-yellow-600 text-xl"></i>
+                        </div>
+                    <div>
+                        <h3 class="text-xl font-bold">First Runnerup – Robofest 4.0 Maze Solving</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">₹10 lakh prize pool</p>
+                    </div>
+                </div>
+                <!-- Ideathon -->
+                <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 flex items-center">
+                    <div class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-trophy text-green-600 text-xl"></i>
+                        </div>
+                    <div>
+                        <h3 class="text-xl font-bold">Winner – Ideathon Prototyping Challenge 2024</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">National Level Competition</p>
+                    </div>
+                </div>
+                <!-- Robocon -->
+                <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 flex items-center">
+                    <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-robot text-blue-600 text-xl"></i>
+                        </div>
+                    <div>
+                        <h3 class="text-xl font-bold">Finalist – DD-Robocon 2024 at IIT Delhi</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">International Robotics Competition</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50 dark:bg-slate-700/70">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                
+                <h2 class="text-3xl font-bold gradient-text inline-block">Get In Touch</h2>
+                <p class="text-lg text-slate-600 dark:text-slate-400 mt-6 max-w-2xl mx-auto">Interested in collaborating or want to connect? Reach out and let's start a conversation!</p>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-slate-200 mb-6">Contact Information</h3>
+                        <div class="space-y-4">
+                            <a href="mailto:jeelkukadiya161104@gmail.com" class="flex items-center gap-4 p-4 bg-white dark:bg-slate-800/70 shadow-xl backdrop-blur-sm rounded-lg hover:shadow-2xl transition-all duration-300 group">
+                                <div class="text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail w-6 h-6"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 dark:text-slate-200">Email</h4>
+                                    <p class="text-gray-700 dark:text-slate-400">jeelkukadiya161104@gmail.com</p>
+                                </div>
+                            </a>
+                            <a href="tel:+919173404089" class="flex items-center gap-4 p-4 bg-white dark:bg-slate-800/70 shadow-xl backdrop-blur-sm rounded-lg hover:shadow-2xl transition-all duration-300 group">
+                                <div class="text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-6 h-6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 dark:text-slate-200">Phone</h4>
+                                    <p class="text-gray-700 dark:text-slate-400">+91 91734 04089</p>
+                                </div>
+                                </a>
+                            <a href="#" class="flex items-center gap-4 p-4 bg-white dark:bg-slate-800/70 shadow-xl backdrop-blur-sm rounded-lg hover:shadow-2xl transition-all duration-300 group">
+                                <div class="text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin w-6 h-6"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 dark:text-slate-200">Location</h4>
+                                    <p class="text-gray-700 dark:text-slate-400">Surat, Gujarat</p>
+                                </div>
+                                </a>
+                            </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-slate-200 mb-6">Follow Me</h3>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/jeelkukadiya" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full flex items-center justify-center hover:shadow-lg hover:scale-110 transition-all duration-300">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/jeel-kukadiya-1922362a5/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full flex items-center justify-center hover:shadow-lg hover:scale-110 transition-all duration-300">
+                                <i class="fab fa-linkedin-in text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Send Message Form -->
+                <div class="bg-white dark:bg-slate-800/50 shadow-xl backdrop-blur-sm rounded-xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 dark:text-slate-200 mb-6">Send Message</h3>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-800 dark:text-slate-300 mb-2">Your Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-gray-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-gray-800 dark:text-gray-200" placeholder="Enter your name">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-800 dark:text-slate-300 mb-2">Your Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-gray-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-gray-800 dark:text-gray-200" placeholder="Enter your email">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-800 dark:text-slate-300 mb-2">Message</label>
+                            <textarea id="message" name="message" required rows="5" class="w-full px-4 py-3 bg-gray-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none text-gray-800 dark:text-gray-200" placeholder="Enter your message"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 px-6 rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send "><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-gray-900 via-blue-900 to-black text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex justify-center space-x-4 mb-4">
+                    <a href="https://www.linkedin.com/in/jeel-kukadiya-1922362a5/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/jeelkukadiya" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <p class="text-gray-400">&copy; 2025 JEEL KUKADIYA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+      // Set dark theme by default if no preference is set
+      if (!localStorage.getItem('color-theme')) {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    </script>
+</body>
+</html>
