@@ -157,47 +157,60 @@ window.addEventListener('click', function(e) {
 
 // === Contact Form Email Sending ===
 // Uses EmailJS (https://www.emailjs.com/) for client-side email sending
-const contactForm = document.getElementById('contact-form');
-const formStatus = document.getElementById('form-status');
+const contactForm = document.getElementById('form-status');
+const statusElem = document.getElementById('form-status-message');
+
 if (contactForm) {
   contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    // Validation
+
+    // Get form values
     const name = contactForm.name.value.trim();
     const email = contactForm.email.value.trim();
     const message = contactForm.message.value.trim();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Validation
     if (!name || !email || !message) {
-      formStatus.textContent = 'All fields are required.';
-      formStatus.style.color = 'red';
+      statusElem.textContent = 'All fields are required.';
+      statusElem.style.color = 'red';
       return;
     }
     if (!emailRegex.test(email)) {
-      formStatus.textContent = 'Please enter a valid email address.';
-      formStatus.style.color = 'red';
+      statusElem.textContent = 'Please enter a valid email address.';
+      statusElem.style.color = 'red';
       return;
     }
-    formStatus.textContent = 'Sending...';
-    formStatus.style.color = '';
+
+    statusElem.textContent = 'Sending...';
+    statusElem.style.color = '';
+
     const serviceID = 'service_8vwc5ih';
     const templateID = 'template_0z817gr';
-    const userID = 'YOUR_USER_ID';
+    const userID = 'PGP4JSNQQTlyhofU5';
     const formData = {
       name,
       email,
       message,
       time: new Date().toLocaleString()
     };
+
+    // Make sure EmailJS is loaded
+    if (typeof emailjs === 'undefined') {
+      statusElem.textContent = 'Email service not available. Please try again later.';
+      statusElem.style.color = 'red';
+      return;
+    }
+
     emailjs.send(serviceID, templateID, formData, userID)
       .then(() => {
-        formStatus.textContent = 'Message sent successfully!';
-        formStatus.style.color = 'green';
+        statusElem.textContent = 'Message sent successfully!';
+        statusElem.style.color = 'green';
         contactForm.reset();
       }, (err) => {
-        formStatus.textContent = 'Failed to send message. Please try again later.';
-        formStatus.style.color = 'red';
+        statusElem.textContent = 'Failed to send message. Please try again later.';
+        statusElem.style.color = 'red';
       });
   });
 } 
-
 
