@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="usericon.ico">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
     <!-- Navigation -->
@@ -436,6 +437,7 @@
                             Send Message
                         </button>
                     </form>
+                    <div id="form-status-message" class="mt-4 text-center text-sm"></div>
                 </div>
             </div>
         </div>
@@ -464,6 +466,11 @@
         document.documentElement.classList.add('dark');
         localStorage.setItem('color-theme', 'dark');
       }
+    </script>
+    <script>
+      (function(){
+        emailjs.init('PGP4JSNQQTlyhofU5');
+      })();
     </script>
 </body>
 </html>
